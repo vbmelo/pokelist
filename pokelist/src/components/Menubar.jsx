@@ -7,26 +7,26 @@ import Offcanvas from 'react-bootstrap/Offcanvas';
 
 // Styles
 import styles from './Menubar.module.css';
+import { MagnifyingGlass } from "phosphor-react";
 
 export default function Menubar() {
   return (
     <div className={styles.Menubar}>
       {['md'].map((expand) => (
-        <Navbar key={expand} bg="light" expand={expand} className="mb-3">
+        <Navbar key={expand} bg="light" expand={expand} className={styles.navbar}>
           <Container fluid>
             <Navbar.Brand href="#">
               <img
-                alt=""
+                alt="pokeball"
                 src="https://cdn-icons-png.flaticon.com/512/1427/1427643.png"
-                // src="https://assets.pokemon.com/assets/cms2/img/misc/gus/buttons/logo-pokemon-79x45.png"
                 width="30"
                 height="30"
                 className="d-inline-block align-top"
               />{' '}
-              Pokélist
+              <span className={styles.poketitle}>Pokélist</span>
             </Navbar.Brand>
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
-            <Navbar.Offcanvas
+            <Navbar.Offcanvas 
               id={`offcanvasNavbar-expand-${expand}`}
               aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
               placement="end"
@@ -34,26 +34,26 @@ export default function Menubar() {
               <Offcanvas.Header closeButton>
                 <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
                   <img
-                    alt=""
+                    alt="pokeball"
                     src="https://cdn-icons-png.flaticon.com/512/1427/1427643.png"
                     width="30"
                     height="30"
                     className="d-inline-block align-top"
                   />{' '}
-                  Pokélist
+                  <span className={styles.poketitle}>Pokélist</span>
                 </Offcanvas.Title>
               </Offcanvas.Header>
               <Offcanvas.Body>
                 <Nav className="justify-content-end flex-grow-1 pe-3">
                 </Nav>
-                <Form className="d-flex">
+                <Form className={styles.searchBox}>
                   <Form.Control
                     type="search"
-                    placeholder="Search"
-                    className="me-2"
+                    placeholder="Search any Pokémons"
+                    className="SearchInput"
                     aria-label="Search"
                   />
-                  <Button variant="outline-success">Search</Button>
+                  <Button variant="outline-white" className={styles.searchButton}> <MagnifyingGlass size={32} /> </Button>
                 </Form>
               </Offcanvas.Body>
             </Navbar.Offcanvas>
