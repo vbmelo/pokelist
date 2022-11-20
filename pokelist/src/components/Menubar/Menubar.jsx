@@ -25,11 +25,14 @@ export default function Menubar() {
               />{' '}
               <span className={styles.poketitle}>Pokélist</span>
             </Navbar.Brand>
-            <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
+            <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} 
+              className={styles.navbarToggle}
+            />
             <Navbar.Offcanvas 
               id={`offcanvasNavbar-expand-${expand}`}
               aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
               placement="end"
+              className={styles.offcanvas}
             >
               <Offcanvas.Header closeButton>
                 <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
@@ -49,7 +52,7 @@ export default function Menubar() {
                 <Form className={styles.searchBox}>
                   <Form.Control
                     type="search"
-                    placeholder="Search any Pokémons"
+                    placeholder="Pokésearch"
                     className="SearchInput"
                     aria-label="Search"
                   />

@@ -30,6 +30,7 @@
     color: var(--white);
     font-size: 1rem;
     outline: none;
+    text-align: center;
 
 }
 .searchBox input:hover, .searchBox input:focus{
@@ -47,6 +48,29 @@
     color: var(--white);
 }
 .searchButton:hover {
+    box-shadow: inset -0.2rem -0.2rem 0rem -0.01rem var(--blue-400);
+    color: var(--blue-400);
+    transition: 0.2s;
+}
+
+.offcanvas{
+    background-color: var(--gray-600);
+    color: var(--white);
+    font-size: 1rem;
+    border: none;
+    border-radius: 0.2rem;
+    transition: 0.2s;
+}
+
+.navbarToggle {
+    background-color: transparent;
+    color: var(--white);
+    font-size: 1rem;
+    border: none;
+    border-radius: 0.2rem;
+    transition: 0.2s;
+}
+.navbarToggle:hover {
     box-shadow: inset -0.2rem -0.2rem 0rem -0.01rem var(--blue-400);
     color: var(--blue-400);
     transition: 0.2s;

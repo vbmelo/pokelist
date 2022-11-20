@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import styles from './App.module.css'
 
 // Components
-import Menubar from './components/Menubar'
+import Menubar from './components/Menubar/Menubar'
 
 // App
 export default function App() {
