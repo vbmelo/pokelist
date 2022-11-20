@@ -1,0 +1,55 @@
+.pokeCard{
+    background-color: var(--gray-500);
+    background: linear-gradient(0deg, var(--blue-500) 0%, rgba(0, 0, 0, 0) 100%);
+    border:none;
+    border-radius: 0.2rem;
+
+    box-shadow: 0.1rem -0.1rem 1rem var(--gray-700);
+
+    text-align: center;
+
+    transition: 0.5s;
+}
+
+.pokeCard:hover, .typeWrapper:hover {
+    box-shadow: 0.1rem -0.1rem 1rem var(--gray-900);
+    box-shadow: -0.2rem -0.2rem 0rem -0.01rem var(--blue-400);
+    transition: 0.5s;
+}
+
+.pokemonCardBody {
+    box-shadow: 0.1rem -0.1rem 1rem var(--gray-900);
+}
+
+.pokemonCardName {
+    background-color: var(--blue-500);
+    font-weight: bold;
+    color: var(--white);
+
+    padding: 0.5rem;
+    width: 12rem;
+
+    border-radius: 0.1rem;
+
+    font-size: 1.5rem;
+
+    box-shadow: 0.2rem 0.2rem 1rem var(--gray-600);
+}
+
+.typeWrapper{
+    background-color: var(--gray-400);
+    color: var(--white);
+    font-weight: bold;
+
+    padding: 0.5rem;
+    min-height: 6rem;
+    min-width: 12rem;
+
+    border-radius: 0.1rem;
+
+    box-shadow: 0.2rem 0.2rem 1rem var(--gray-600);
+    
+    text-align: center;
+
+    transition: 0.5s;
+}

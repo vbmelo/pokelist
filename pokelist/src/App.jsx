@@ -1,10 +1,11 @@
 import { useState } from 'react'
+
 // Styles
 import 'bootstrap/dist/css/bootstrap.min.css';
 import styles from './App.module.css'
 
 // Components
-import Menubar from './components/Menubar/Menubar'
+import Home from './pages/Home/Home';
 
 // App
 export default function App() {
@@ -12,10 +13,7 @@ export default function App() {
 
   return (
     <div className={styles.app}> 
-      <Menubar/>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Home/>
     </div>
   )
 }

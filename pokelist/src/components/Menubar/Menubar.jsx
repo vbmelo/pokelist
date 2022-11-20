@@ -9,7 +9,7 @@ import Offcanvas from 'react-bootstrap/Offcanvas';
 import styles from './Menubar.module.css';
 import { MagnifyingGlass } from "phosphor-react";
 
-export default function Menubar() {
+export default function Menubar({searchFilter}) {
   return (
     <div className={styles.Menubar}>
       {['md'].map((expand) => (
@@ -55,8 +55,9 @@ export default function Menubar() {
                     placeholder="Pokésearch"
                     className="SearchInput"
                     aria-label="Search"
+                    onChange={(e) => searchFilter(e.target.value)}
                   />
-                  <Button variant="outline-white" className={styles.searchButton}> <MagnifyingGlass size={32} /> </Button>
+                  <Button variant="outline-white" className={styles.searchButton} onClick={() => searchFilter('')}> <MagnifyingGlass size={32} /> </Button>
                 </Form>
               </Offcanvas.Body>
             </Navbar.Offcanvas>

@@ -31,12 +31,15 @@
 body {
   background: var(--gray-600);
   color: var(--white);
-
   
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
   font-size: 1rem;
   -webkit-font-smoothing: antialiased;
+}
+
+body::-webkit-scrollbar {
+  display: none;
 }
 
 a {
