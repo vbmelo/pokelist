@@ -11,7 +11,7 @@ import Col from "react-bootstrap/Col";
 
 import Menubar from "/src/components/Menubar/Menubar.jsx";
 import PokemonCard from "/src/components/PokemonCard/PokemonCard.jsx";
-import Pagination from "../../components/Pagination/Pagination";
+import PaginationModule from "../../components/Pagination/PaginationModule";
 import PokemonDetailsModal from "../../components/PokemonDetailsModal/PokemonDetailsModal";
 
 import FavoriteProvider from "../../contexts/FavoritesContext";
@@ -23,12 +23,13 @@ export default function Home() {
     const [offset, setOffset] = useState(0);
     const [favorites, setFavorites] = useState([]);
     const [index, setIndex] = useState(0);
+    const [totalPages,setTotalPages] = useState(12);
 
     //Handling the details modal
     const [show, setShow] = useState(false);
 
     let itemsPerPage = 100;
-    let totalPages = 12;
+    
 
     useEffect(() => {
         getPokemons();
@@ -125,9 +126,9 @@ export default function Home() {
         // }}>
         <div className={styles.home}>
             <Menubar searchFilter={searchFilter} />
-            <Pagination
+            <PaginationModule
                 page={page + 1}
-                totalpages={totalPages}
+                totalPages={totalPages}
                 onLeftClick={onLeftClickHandler}
                 onRightClick={onRightClickHandler}
             />

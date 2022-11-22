@@ -78,7 +78,6 @@ export default function PokemonDetailsModal(props) {
                             {props.moves.map((move, key) => (
                                 <Accordion.Body key={key}>
                                     {' '}{props.moves[key].move.name}
-                                    {' | '}
                                 </Accordion.Body>
                             ))}
                         </Accordion.Item>

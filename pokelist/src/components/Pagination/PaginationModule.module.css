@@ -1,0 +1,6 @@
+.paginationContainer{
+    margin-left:   3.5rem !important;
+    align-items: start;
+    display: flex;
+    justify-content: start;
+}
