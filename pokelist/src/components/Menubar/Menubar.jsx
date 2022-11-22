@@ -5,11 +5,17 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 
+import { useContext } from 'react';
+
 // Styles
 import styles from './Menubar.module.css';
 import { MagnifyingGlass } from "phosphor-react";
+import FavoriteContext from '../../contexts/FavoritesContext';
 
 export default function Menubar({searchFilter}) {
+
+  const {favoritePokemons} = useContext(FavoriteContext)
+
   return (
     <div className={styles.Menubar}>
       {['md'].map((expand) => (
@@ -45,6 +51,9 @@ export default function Menubar({searchFilter}) {
                   />{' '}
                   <span className={styles.poketitle}>Pokélist</span>
                 </Offcanvas.Title>
+                <div>
+                  🤍 {favoritePokemons.length}
+                </div>
               </Offcanvas.Header>
               <Offcanvas.Body>
                 <Nav className="justify-content-end flex-grow-1 pe-3">
