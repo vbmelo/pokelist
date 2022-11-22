@@ -22,9 +22,10 @@ export default function Home() {
     const [pokemonsPerPage, setPokemonsPerPage] = useState(100);
     const [offset, setOffset] = useState(0);
     const [favorites, setFavorites] = useState([]);
+    const [index, setIndex] = useState(0);
 
     //Handling the details modal
-    const [modalShow, setModalShow] = useState(false);
+    const [show, setShow] = useState(false);
 
     let itemsPerPage = 100;
     let totalPages = 12;
@@ -107,28 +108,14 @@ export default function Home() {
         setFavorites(updatedFavorites);
     }
 
-    const handleHideModal = () => {setModalShow(false)}
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
 
-    const handleModalShow = (keyClicked) => {
-        {pokemons.map((pokemon, key) => (
-            <>
-                <PokemonDetailsModal
-                    name={pokemon[key].data.name}
-                    image={pokemon[key].data.sprites.front_default}
-                    types={pokemon[key].data.types}
-                    show={modalShow}
-                    onHide={handleHideModal}
-                    height={pokemon[key].data.height}
-                    base_experience={pokemon[key].data.base_experience}
-                    forms={pokemon[key].data.forms}
-                    id={pokemon[key].data.id}
-                    abilities={pokemon[key].data.abilities}
-                    moves={pokemon[key].data.moves}
-                />
-            </>
-        ))}
-        
-        setModalShow(true)
+
+    const handleModalShow = (key) => {
+        setIndex(key);
+        console.log("mostrar modal", key);
+        handleShow();
     }
 
     return (
@@ -149,8 +136,10 @@ export default function Home() {
                     {pokemons.map((pokemon, key) => (
                         <>
                             <Col className="d-flex mb-4 m-0" key={key}>
-                                <span onClick={handleModalShow(key)}>
+                                <span onClick={() => handleModalShow(key)}>
                                     <PokemonCard
+                                        key ={key}
+                                        id={pokemon.data.id}
                                         name={pokemon.data.name}
                                         image={pokemon.data.sprites.front_default}
                                         types={pokemon.data.types}
@@ -160,6 +149,22 @@ export default function Home() {
                         </>
                     ))}
                 </Row>
+                {show ? (
+                    <PokemonDetailsModal
+                    name={pokemons[index].data.name}
+                    image={pokemons[index].data.sprites.front_default}
+                    types={pokemons[index].data.types}
+                    show={show} 
+                    onHide={handleClose}
+                    height={pokemons[index].data.height}
+                    base_experience={pokemons[index].data.base_experience}
+                    forms={pokemons[index].data.forms}
+                    id={pokemons[index].data.id}
+                    abilities={pokemons[index].data.abilities}
+                    moves={pokemons[index].data.moves}
+                    />
+                ) : ('')}
+                
             </Container>
         </div>
         // </FavoriteProvider>
